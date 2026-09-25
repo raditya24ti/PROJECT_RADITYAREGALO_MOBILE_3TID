@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RRF-Lays</string>
+    <string name="btn_my_project">My Project</string>
+    <string name="snack_title">Lays Potato Chips</string>
+    <string name="snack_description">Lays adalah merek keripik kentang lezat dengan berbagai varian rasa yang dipotong tipis dan digoreng hingga renyah garing.</string>
+    <string name="snack_nutrition_title">Komposisi Gizi (Per 30g):</string>
+    <string name="snack_nutrition_detail">
+        • Energi Total: 160 kkal\n
+        • Lemak Total: 10g\n
+        • Protein: 2g\n
+        • Karbohidrat Total: 15g\n
+        • Natrium/Garam: 170mg
+    </string>
+</resources>
