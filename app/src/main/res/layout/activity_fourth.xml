@@ -7,61 +7,300 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="24dp">
+    android:background="@color/sabit_cream">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fourth Activity"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <!-- ================= TOOLBAR ================= -->
 
-    <Button
-        android:id="@+id/btnKembali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Kembali" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sabit_navy"
+        android:titleTextColor="@color/white"
+        android:subtitleTextColor="@color/white" />
 
-    <Button
-        android:id="@+id/btnShowSnackbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Tampilkan Snackbar" />
+    <!-- ================= CONTENT ================= -->
 
-    <Button
-        android:id="@+id/btnShowAlertDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Tampilkan Alert Dialog" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-    <!-- MaterialCardView - Pertemuan 4 -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="24dp"
-        app:cardElevation="8dp"
-        app:backgroundTint="#FFF8E7">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <Button
+            <!-- Header -->
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Card"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:fontFamily="@font/archivo"
+                android:text="Informasi Rengginang Sabit"
+                android:textColor="@color/sabit_navy"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Kenali lebih dekat produk dan layanan Rengginang Sabit."
+                android:textColor="@color/sabit_gray"
+                android:textSize="12sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+            <!-- ================= INFO CARD ================= -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/sabit_navy"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/sabit_gold"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rengginang Sabit"
+                        android:textColor="@color/sabit_gold"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="Produk rengginang dengan cita rasa gurih dan renyah yang cocok untuk dinikmati bersama keluarga."
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= INTERACTION ================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/archivo"
+                android:text="Layanan Interaktif"
+                android:textColor="@color/sabit_navy"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Gunakan tombol berikut untuk mencoba fitur aplikasi."
+                android:textColor="@color/sabit_gray"
+                android:textSize="11sp" />
+
+            <!-- Snackbar -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/archivo"
+                            android:text="Notifikasi Pesanan"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Tampilkan notifikasi singkat."
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnShowSnackbar"
+                        android:layout_width="115dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:text="Coba"
+                        android:textColor="@color/white"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Alert Dialog -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/archivo"
+                            android:text="Konfirmasi"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:text="Tampilkan dialog konfirmasi."
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnShowAlertDialog"
+                        android:layout_width="115dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="@color/sabit_gold"
+                        android:text="Coba"
+                        android:textColor="@color/sabit_navy"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ================= MATERIAL CARD ================= -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/archivo"
+                android:text="Produk Pilihan"
+                android:textColor="@color/sabit_navy"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="24dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/sabit_gold"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:contentDescription="Rengginang Original"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/original" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/archivo"
+                            android:text="Rengginang Original"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="10sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Rp 25.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

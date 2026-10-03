@@ -1,516 +1,638 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0F172A"
-    android:fillViewport="true"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="@color/sabit_cream">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="24dp">
-
-        <!-- ================= HEADER ================= -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingStart="24dp"
-            android:paddingEnd="18dp">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:contentDescription="Logo Rengginang Sabit"
-                android:scaleType="centerInside"
-                android:src="@drawable/logo" />
-
-            <TextView
-                android:id="@+id/tvNamaBrand"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/archivo"
-                android:text="Rengginang&#10;Sabit"
-                android:textColor="#E2B33B"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnAdmin"
-                android:layout_width="85dp"
-                android:layout_height="40dp"
-                android:backgroundTint="#1E293B"
-                android:text="Admin"
-                android:textColor="#E2B33B"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#1E293B" />
-
-        <!-- ================= HERO ================= -->
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="24dp"
-            android:background="#1E293B"
             android:orientation="vertical"
-            android:padding="18dp">
+            android:paddingBottom="24dp">
 
-            <TextView
-                android:id="@+id/tvPetaDistribusi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#29364A"
-                android:paddingStart="12dp"
-                android:paddingTop="6dp"
-                android:paddingEnd="12dp"
-                android:paddingBottom="6dp"
-                android:text="●  PETA DISTRIBUSI"
-                android:textColor="#E2B33B"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <!--
-                EditText dipertahankan untuk fungsi P3.
-                Nanti digunakan untuk demonstrasi EditText -> Toast.
-            -->
-
-            <EditText
-                android:id="@+id/inputNoTujuan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                android:background="@android:color/transparent"
-                android:fontFamily="@font/archivo"
-                android:inputType="text|textMultiLine"
-                android:padding="0dp"
-                android:text="We Serve quality&#10;Rengginang Sabit"
-                android:textColor="#FFFFFF"
-                android:textSize="21sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textSlogan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/archivo"
-                android:text="Produk ketan pilihan, renyah gurih, langsung dari pengrajin terpercaya."
-                android:textColor="#AAB5C7"
-                android:textSize="12sp" />
-
-            <Button
-                android:id="@+id/btnMasuk"
-                android:layout_width="120dp"
-                android:layout_height="44dp"
-                android:layout_marginTop="14dp"
-                android:backgroundTint="#E2B33B"
-                android:text="Lihat Produk"
-                android:textColor="#111827"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-            <Button
-                android:id="@+id/btnToFourth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="P4 - Fourth Activity" />
-
-        </LinearLayout>
-
-        <!-- ================= PRODUK UNGGULAN ================= -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="24dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/tvProdukUnggulan"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="@font/archivo"
-                android:text="Produk Unggulan"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvLihatSemua"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lihat Semua →"
-                android:textColor="#E2B33B"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <!-- ================= BARIS PRODUK 1 ================= -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="24dp"
-            android:orientation="horizontal">
-
-            <!-- ORIGINAL -->
-
+            <!-- HEADER -->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/imgLogo"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:contentDescription="Logo Rengginang Sabit"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rengginang Sabit"
+                        android:textColor="@color/sabit_navy"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivo" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cita rasa tradisional, kualitas pilihan"
+                        android:textColor="@color/sabit_gray"
+                        android:textSize="11sp"
+                        android:fontFamily="@font/archivo" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnAdmin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/sabit_navy"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+
+            </LinearLayout>
+
+            <!-- GARIS -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/sabit_gold" />
+
+            <!-- HERO -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/sabit_navy"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="22dp">
+
+                    <TextView
+                        android:id="@+id/tvPetaDistribusi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_peta_distribusi"
+                        android:textColor="@color/sabit_gold"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivo" />
+
+                    <TextView
+                        android:id="@+id/textSlogan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:text="@string/hero_text"
+                        android:textColor="@color/white"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/archivo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Rengginang renyah dengan berbagai pilihan rasa."
+                        android:textColor="@color/white"
+                        android:alpha="0.85"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/archivo" />
+
+                    <EditText
+                        android:id="@+id/inputNoTujuan"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="18dp"
+                        android:background="@android:drawable/editbox_background"
+                        android:hint="Masukkan nomor tujuan"
+                        android:inputType="phone"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="@color/sabit_text"
+                        android:textColorHint="@color/sabit_gray"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btnMasuk"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Lanjutkan"
+                        android:textColor="@color/sabit_navy"
+                        android:textStyle="bold"
+                        android:backgroundTint="@color/sabit_gold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PRODUK UNGGULAN -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="24dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="12dp">
+
+                <TextView
+                    android:id="@+id/tvProdukUnggulan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Produk Unggulan"
+                    android:textColor="@color/sabit_navy"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/archivo" />
+
+                <TextView
+                    android:id="@+id/tvLihatSemua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lihat_semua"
+                    android:textColor="@color/sabit_gold"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- PRODUK 1 -->
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:background="#1E293B"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:id="@+id/imgOriginal"
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:contentDescription="Rengginang Original"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/original" />
-
-                <TextView
-                    android:id="@+id/tvProduk1"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rengginang Original"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/tvBerat1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="250g"
-                    android:textColor="#8995A8"
-                    android:textSize="9sp" />
+                    <ImageView
+                        android:id="@+id/imgOriginal"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:contentDescription="Rengginang Original"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/original" />
 
-                <TextView
-                    android:id="@+id/tvHarga1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Rp 25.000"
-                    android:textColor="#E2B33B"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
 
-                <Button
-                    android:id="@+id/btnPesan1"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#D9AA2E"
-                    android:text="Pesan via WA"
-                    android:textColor="#111827"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvProduk1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rengginang Original"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-            </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvBerat1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="11sp" />
 
-            <!-- RAWIT -->
+                        <TextView
+                            android:id="@+id/tvHarga1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Rp25.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
-            <LinearLayout
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPesan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_pesan"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PRODUK 2 -->
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk2"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_weight="1"
-                android:background="#1E293B"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:id="@+id/imgRawit"
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:contentDescription="Rengginang Rawit"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/rawit" />
-
-                <TextView
-                    android:id="@+id/tvProduk2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rengginang Rawit"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/tvBerat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="250g"
-                    android:textColor="#8995A8"
-                    android:textSize="9sp" />
+                    <ImageView
+                        android:id="@+id/imgRawit"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:contentDescription="Rengginang Rawit"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rawit" />
 
-                <TextView
-                    android:id="@+id/tvHarga2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Rp 28.000"
-                    android:textColor="#E2B33B"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
 
-                <Button
-                    android:id="@+id/btnPesan2"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#D9AA2E"
-                    android:text="Pesan via WA"
-                    android:textColor="#111827"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvProduk2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rengginang Rawit"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-            </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvBerat2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="11sp" />
 
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvHarga2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Rp27.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
-        <!-- ================= BARIS PRODUK 2 ================= -->
+                    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
-            android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnPesan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_pesan"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
 
-            <!-- CUMI -->
+                </LinearLayout>
 
-            <LinearLayout
+            </androidx.cardview.widget.CardView>
+
+            <!-- PRODUK 3 -->
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk3"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:background="#1E293B"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:id="@+id/imgCumi"
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:contentDescription="Rengginang Cumi"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/cumi" />
-
-                <TextView
-                    android:id="@+id/tvProduk3"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rengginang Cumi"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/tvBerat3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="250g"
-                    android:textColor="#8995A8"
-                    android:textSize="9sp" />
+                    <ImageView
+                        android:id="@+id/imgCumi"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:contentDescription="Rengginang Cumi"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cumi" />
 
-                <TextView
-                    android:id="@+id/tvHarga3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Rp 30.000"
-                    android:textColor="#E2B33B"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
 
-                <Button
-                    android:id="@+id/btnPesan3"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#D9AA2E"
-                    android:text="Pesan via WA"
-                    android:textColor="#111827"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvProduk3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rengginang Cumi"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-            </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvBerat3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="11sp" />
 
-            <!-- BAWANG -->
+                        <TextView
+                            android:id="@+id/tvHarga3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Rp28.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
 
-            <LinearLayout
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPesan3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_pesan"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PRODUK 4 -->
+            <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk4"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:layout_weight="1"
-                android:background="#1E293B"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp">
 
-                <ImageView
-                    android:id="@+id/imgBawang"
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:contentDescription="Rengginang Bawang"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/bawang" />
-
-                <TextView
-                    android:id="@+id/tvProduk4"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rengginang Bawang"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
 
-                <TextView
-                    android:id="@+id/tvBerat4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="250g"
-                    android:textColor="#8995A8"
-                    android:textSize="9sp" />
+                    <ImageView
+                        android:id="@+id/imgBawang"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:contentDescription="Rengginang Bawang"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bawang" />
 
-                <TextView
-                    android:id="@+id/tvHarga4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Rp 28.000"
-                    android:textColor="#E2B33B"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
 
-                <Button
-                    android:id="@+id/btnPesan4"
+                        <TextView
+                            android:id="@+id/tvProduk4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rengginang Bawang"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvBerat4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvHarga4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Rp26.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPesan4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_pesan"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- PRODUK 5 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardProduk5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#D9AA2E"
-                    android:text="Pesan via WA"
-                    android:textColor="#111827"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imgUdang"
+                        android:layout_width="82dp"
+                        android:layout_height="82dp"
+                        android:contentDescription="Rengginang Udang"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/udang" />
 
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="14dp">
 
-        <!-- ================= BARIS PRODUK 3 ================= -->
+                        <TextView
+                            android:id="@+id/tvProduk5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rengginang Udang"
+                            android:textColor="@color/sabit_navy"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp">
+                        <TextView
+                            android:id="@+id/tvBerat5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="250g"
+                            android:textColor="@color/sabit_gray"
+                            android:textSize="11sp" />
+
+                        <TextView
+                            android:id="@+id/tvHarga5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Rp29.000"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnPesan5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/btn_pesan"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/sabit_navy"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- AREA PENGUJIAN -->
+            <TextView
+                android:id="@+id/tvPengujian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Area Pengujian Materi" />
 
             <LinearLayout
-                android:id="@+id/cardProduk5"
-                android:layout_width="0dp"
+                android:id="@+id/layoutPengujian"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#1E293B"
                 android:orientation="vertical"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/imgUdang"
-                    android:layout_width="match_parent"
-                    android:layout_height="115dp"
-                    android:contentDescription="Rengginang Udang"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/udang" />
-
-                <TextView
-                    android:id="@+id/tvProduk5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Rengginang Udang"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvBerat5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="250g"
-                    android:textColor="#8995A8"
-                    android:textSize="9sp" />
-
-                <TextView
-                    android:id="@+id/tvHarga5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:text="Rp 30.000"
-                    android:textColor="#E2B33B"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                android:visibility="gone">
 
                 <Button
-                    android:id="@+id/btnPesan5"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#D9AA2E"
-                    android:text="Pesan via WA"
-                    android:textColor="#111827"
-                    android:textSize="9sp"
-                    android:textStyle="bold" />
+                    android:id="@+id/btnToFourth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pertemuan 4" />
+
+                <Button
+                    android:id="@+id/btnToFifth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pertemuan 5" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>

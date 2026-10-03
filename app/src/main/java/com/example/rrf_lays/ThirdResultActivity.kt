@@ -1,20 +1,37 @@
 package com.example.rrf_lays
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.rrf_lays.databinding.ActivityThirdResultBinding
 
 class ThirdResultActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityThirdResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_third_result)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        binding = ActivityThirdResultBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.apply {
+            title = "Rengginang Sabit"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
