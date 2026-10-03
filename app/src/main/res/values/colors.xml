@@ -10,5 +10,6 @@
     <color name="sabit_text">#1F2937</color>
     <color name="sabit_gray">#6B7280</color>
     <color name="sabit_card">#1E293B</color>
+    <color name="bottom_nav_color">#0F172A</color>
 
 </resources>

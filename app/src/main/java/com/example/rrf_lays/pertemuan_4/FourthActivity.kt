@@ -2,6 +2,7 @@ package com.example.rrf_lays.pertemuan_4
 
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +21,15 @@ class FourthActivity : AppCompatActivity() {
 
         binding = ActivityFourthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
+
+        supportActionBar?.apply {
+            title = "Rengginang Sabit"
+            subtitle = "Pertemuan 5"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(
@@ -44,10 +54,6 @@ class FourthActivity : AppCompatActivity() {
             "Data Intent",
             "Nama: $name, Usia: $age, Asal: $from"
         )
-
-        binding.btnKembali.setOnClickListener {
-            finish()
-        }
 
         // Snackbar - Pertemuan 4
         binding.btnShowSnackbar.setOnClickListener {
@@ -93,6 +99,17 @@ class FourthActivity : AppCompatActivity() {
             "onCreate",
             "FourthActivity dibuat pertama kali"
         )
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     override fun onStart() {
