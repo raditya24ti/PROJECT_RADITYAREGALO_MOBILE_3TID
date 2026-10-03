@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.rrf_lays.databinding.ActivityMainBinding
+import com.example.rrf_lays.pertemuan_4.FourthActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +22,20 @@ class MainActivity : AppCompatActivity() {
                 this,
                 ThirdResultActivity::class.java
             )
+
+            startActivity(intent)
+        }
+
+        binding.btnToFourth.setOnClickListener {
+
+            val intent = Intent(
+                this,
+                FourthActivity::class.java
+            )
+
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
 
             startActivity(intent)
         }
