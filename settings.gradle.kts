@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "RRF-LAYS"
+rootProject.name = "Rengginang-Sabit"
 include(":app")
  
