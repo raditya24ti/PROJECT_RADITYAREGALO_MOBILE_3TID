@@ -127,6 +127,12 @@
                 android:textColor="#111827"
                 android:textSize="12sp"
                 android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnToFourth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="P4 - Fourth Activity" />
 
         </LinearLayout>
 
