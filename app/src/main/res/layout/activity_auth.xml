@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/sabit_cream">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="28dp">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="Logo Rengginang Sabit"
+            android:src="@drawable/logo"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Rengginang Sabit"
+            android:textColor="@color/sabit_navy"
+            android:textSize="28sp"
+            android:fontFamily="@font/archivoblack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Admin Login"
+            android:textColor="@color/sabit_gold"
+            android:textSize="15sp"
+            android:fontFamily="@font/archivo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Silakan masuk untuk melanjutkan"
+            android:textColor="@color/sabit_gray"
+            android:textSize="13sp"
+            android:fontFamily="@font/inter" />
+
+        <EditText
+            android:id="@+id/inputUsername"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="32dp"
+            android:hint="Username"
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/sabit_text"
+            android:textColorHint="@color/sabit_gray"
+            android:fontFamily="@font/inter"
+            android:background="@android:drawable/editbox_background" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/sabit_text"
+            android:textColorHint="@color/sabit_gray"
+            android:fontFamily="@font/inter"
+            android:background="@android:drawable/editbox_background" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="24dp"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:backgroundTint="@color/sabit_navy" />
+
+    </LinearLayout>
+
+</ScrollView>

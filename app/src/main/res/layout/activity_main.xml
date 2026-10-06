@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,6 +9,7 @@
     android:background="@color/sabit_cream">
 
     <ScrollView
+        android:id="@+id/scrollViewMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
@@ -18,7 +20,8 @@
             android:orientation="vertical"
             android:paddingBottom="24dp">
 
-            <!-- HEADER -->
+            <!-- ==================== HEADER ==================== -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,15 +54,16 @@
                         android:textColor="@color/sabit_navy"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/archivo" />
+                        android:fontFamily="@font/archivoblack" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
                         android:text="Cita rasa tradisional, kualitas pilihan"
                         android:textColor="@color/sabit_gray"
                         android:textSize="11sp"
-                        android:fontFamily="@font/archivo" />
+                        android:fontFamily="@font/inter" />
 
                 </LinearLayout>
 
@@ -70,6 +74,7 @@
                     android:text="Admin"
                     android:textSize="11sp"
                     android:textColor="@color/white"
+                    android:fontFamily="@font/inter"
                     android:backgroundTint="@color/sabit_navy"
                     android:minHeight="0dp"
                     android:minWidth="0dp"
@@ -80,7 +85,8 @@
 
             </LinearLayout>
 
-            <!-- GARIS -->
+            <!-- GARIS AKSEN -->
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -88,7 +94,8 @@
                 android:layout_marginEnd="20dp"
                 android:background="@color/sabit_gold" />
 
-            <!-- HERO -->
+            <!-- ==================== HERO ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +131,7 @@
                         android:textColor="@color/white"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        android:fontFamily="@font/archivo" />
+                        android:fontFamily="@font/archivoblack" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -134,37 +141,28 @@
                         android:textColor="@color/white"
                         android:alpha="0.85"
                         android:textSize="13sp"
-                        android:fontFamily="@font/archivo" />
+                        android:fontFamily="@font/inter" />
 
-                    <EditText
-                        android:id="@+id/inputNoTujuan"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="18dp"
-                        android:background="@android:drawable/editbox_background"
-                        android:hint="Masukkan nomor tujuan"
-                        android:inputType="phone"
-                        android:paddingStart="14dp"
-                        android:paddingEnd="14dp"
-                        android:textColor="@color/sabit_text"
-                        android:textColorHint="@color/sabit_gray"
-                        android:textSize="13sp" />
+                    <!-- CTA -->
 
                     <Button
                         android:id="@+id/btnMasuk"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_marginTop="12dp"
-                        android:text="Lanjutkan"
+                        android:layout_marginTop="20dp"
+                        android:text="Lihat Produk"
                         android:textColor="@color/sabit_navy"
                         android:textStyle="bold"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_gold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
-            <!-- PRODUK UNGGULAN -->
+            <!-- ==================== PRODUK UNGGULAN ==================== -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -193,11 +191,13 @@
                     android:text="@string/lihat_semua"
                     android:textColor="@color/sabit_gold"
                     android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/inter" />
 
             </LinearLayout>
 
-            <!-- PRODUK 1 -->
+            <!-- ==================== PRODUK 1 ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk1"
                 android:layout_width="match_parent"
@@ -238,7 +238,8 @@
                             android:text="Rengginang Original"
                             android:textColor="@color/sabit_navy"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/archivo" />
 
                         <TextView
                             android:id="@+id/tvBerat1"
@@ -247,7 +248,8 @@
                             android:layout_marginTop="4dp"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
-                            android:textSize="11sp" />
+                            android:textSize="11sp"
+                            android:fontFamily="@font/inter" />
 
                         <TextView
                             android:id="@+id/tvHarga1"
@@ -257,7 +259,8 @@
                             android:text="Rp25.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter" />
 
                     </LinearLayout>
 
@@ -268,6 +271,8 @@
                         android:text="@string/btn_pesan"
                         android:textSize="10sp"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_navy"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
@@ -278,7 +283,8 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- PRODUK 2 -->
+            <!-- ==================== PRODUK 2 ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk2"
                 android:layout_width="match_parent"
@@ -319,7 +325,8 @@
                             android:text="Rengginang Rawit"
                             android:textColor="@color/sabit_navy"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/archivo" />
 
                         <TextView
                             android:id="@+id/tvBerat2"
@@ -328,7 +335,8 @@
                             android:layout_marginTop="4dp"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
-                            android:textSize="11sp" />
+                            android:textSize="11sp"
+                            android:fontFamily="@font/inter" />
 
                         <TextView
                             android:id="@+id/tvHarga2"
@@ -338,7 +346,8 @@
                             android:text="Rp27.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter" />
 
                     </LinearLayout>
 
@@ -349,6 +358,8 @@
                         android:text="@string/btn_pesan"
                         android:textSize="10sp"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_navy"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
@@ -359,7 +370,8 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- PRODUK 3 -->
+            <!-- ==================== PRODUK 3 ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk3"
                 android:layout_width="match_parent"
@@ -400,7 +412,8 @@
                             android:text="Rengginang Cumi"
                             android:textColor="@color/sabit_navy"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/archivo" />
 
                         <TextView
                             android:id="@+id/tvBerat3"
@@ -409,7 +422,8 @@
                             android:layout_marginTop="4dp"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
-                            android:textSize="11sp" />
+                            android:textSize="11sp"
+                            android:fontFamily="@font/inter" />
 
                         <TextView
                             android:id="@+id/tvHarga3"
@@ -419,7 +433,8 @@
                             android:text="Rp28.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter" />
 
                     </LinearLayout>
 
@@ -430,6 +445,8 @@
                         android:text="@string/btn_pesan"
                         android:textSize="10sp"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_navy"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
@@ -440,7 +457,8 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- PRODUK 4 -->
+            <!-- ==================== PRODUK 4 ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk4"
                 android:layout_width="match_parent"
@@ -481,7 +499,8 @@
                             android:text="Rengginang Bawang"
                             android:textColor="@color/sabit_navy"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/archivo" />
 
                         <TextView
                             android:id="@+id/tvBerat4"
@@ -490,7 +509,8 @@
                             android:layout_marginTop="4dp"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
-                            android:textSize="11sp" />
+                            android:textSize="11sp"
+                            android:fontFamily="@font/inter" />
 
                         <TextView
                             android:id="@+id/tvHarga4"
@@ -500,7 +520,8 @@
                             android:text="Rp26.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter" />
 
                     </LinearLayout>
 
@@ -511,6 +532,8 @@
                         android:text="@string/btn_pesan"
                         android:textSize="10sp"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_navy"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
@@ -521,7 +544,8 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- PRODUK 5 -->
+            <!-- ==================== PRODUK 5 ==================== -->
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardProduk5"
                 android:layout_width="match_parent"
@@ -562,7 +586,8 @@
                             android:text="Rengginang Udang"
                             android:textColor="@color/sabit_navy"
                             android:textSize="15sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/archivo" />
 
                         <TextView
                             android:id="@+id/tvBerat5"
@@ -571,7 +596,8 @@
                             android:layout_marginTop="4dp"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
-                            android:textSize="11sp" />
+                            android:textSize="11sp"
+                            android:fontFamily="@font/inter" />
 
                         <TextView
                             android:id="@+id/tvHarga5"
@@ -581,7 +607,8 @@
                             android:text="Rp29.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="13sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:fontFamily="@font/inter" />
 
                     </LinearLayout>
 
@@ -592,6 +619,8 @@
                         android:text="@string/btn_pesan"
                         android:textSize="10sp"
                         android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/inter"
                         android:backgroundTint="@color/sabit_navy"
                         android:minWidth="0dp"
                         android:minHeight="0dp"
@@ -602,13 +631,15 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- AREA PENGUJIAN -->
+            <!-- ==================== AREA PENGUJIAN ==================== -->
+
             <TextView
                 android:id="@+id/tvPengujian"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:text="Area Pengujian Materi" />
+                android:text="Area Pengujian Materi"
+                android:fontFamily="@font/inter" />
 
             <LinearLayout
                 android:id="@+id/layoutPengujian"
@@ -621,13 +652,15 @@
                     android:id="@+id/btnToFourth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pertemuan 4" />
+                    android:text="Pertemuan 4"
+                    android:fontFamily="@font/inter" />
 
                 <Button
                     android:id="@+id/btnToFifth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pertemuan 5" />
+                    android:text="Pertemuan 5"
+                    android:fontFamily="@font/inter" />
 
             </LinearLayout>
 

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sabit_cream">
+
+    <!-- Toolbar Admin -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sabit_navy"
+        android:title="Admin Rengginang Sabit"
+        android:titleTextColor="@color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="28dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="24dp"
+                android:contentDescription="Logo Rengginang Sabit"
+                android:src="@drawable/logo"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Admin Rengginang Sabit"
+                android:textColor="@color/sabit_navy"
+                android:textSize="28sp"
+                android:fontFamily="@font/archivoblack" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Admin Dashboard"
+                android:textColor="@color/sabit_gold"
+                android:textSize="15sp"
+                android:fontFamily="@font/archivo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Selamat datang di halaman admin"
+                android:textColor="@color/sabit_gray"
+                android:textSize="13sp"
+                android:fontFamily="@font/inter" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

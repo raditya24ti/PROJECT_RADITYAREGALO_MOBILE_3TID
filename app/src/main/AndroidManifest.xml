@@ -15,8 +15,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RRFLAYS">
 
+        <!-- MainActivity bukan lagi halaman utama -->
         <activity
             android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MyProject"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ThirdResultActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".pertemuan_4.FourthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".pertemuan_5.FifthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".pertemuan_5.WebViewActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- SplashScreenActivity menjadi halaman pertama -->
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -25,32 +60,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name=".MyProject"
+            android:name=".DeveloperProfileActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".ThirdResultActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".pertemuan_4.FourthActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".pertemuan_5.FifthActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
-        <activity
-            android:name=".pertemuan_5.WebViewActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-
     </application>
 
 </manifest>
