@@ -62,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
-                        android:fontFamily="@font/archivo"
+                        android:fontFamily="@font/archivoblack"
                         android:text="Rengginang Sabit"
                         android:textColor="@color/sabit_gold"
                         android:textSize="25sp"
@@ -72,6 +72,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:fontFamily="@font/inter"
                         android:text="We Serve quality Rengginang Sabit"
                         android:textColor="@color/white"
                         android:textSize="13sp" />
@@ -80,6 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/inter"
                         android:text="Gurih, renyah, dan dibuat untuk menemani setiap momen."
                         android:textColor="@color/white"
                         android:textSize="11sp" />
@@ -117,6 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="3dp"
+                        android:fontFamily="@font/inter"
                         android:text="Rasa favorit Rengginang Sabit"
                         android:textColor="@color/sabit_gray"
                         android:textSize="10sp" />
@@ -126,6 +129,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:text="250g"
                     android:textColor="@color/sabit_gold"
                     android:textSize="11sp"
@@ -180,6 +184,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
+                            android:fontFamily="@font/inter"
                             android:text="Gurih • Renyah"
                             android:textColor="@color/sabit_gray"
                             android:textSize="10sp" />
@@ -189,6 +194,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
                         android:text="250g"
                         android:textColor="@color/sabit_gold"
                         android:textSize="10sp"
@@ -245,6 +251,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
+                            android:fontFamily="@font/inter"
                             android:text="Pedas • Gurih"
                             android:textColor="@color/sabit_gray"
                             android:textSize="10sp" />
@@ -254,6 +261,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter"
                         android:text="250g"
                         android:textColor="@color/sabit_gold"
                         android:textSize="10sp"
@@ -276,6 +284,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter"
                     android:text="Cumi"
                     android:textColor="@color/sabit_gray"
                     android:textSize="10sp" />
@@ -284,6 +293,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="@font/inter"
                     android:text="•"
                     android:textColor="@color/sabit_gold"
                     android:textSize="10sp" />
@@ -292,6 +302,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="@font/inter"
                     android:text="Bawang"
                     android:textColor="@color/sabit_gray"
                     android:textSize="10sp" />
@@ -300,6 +311,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="@font/inter"
                     android:text="•"
                     android:textColor="@color/sabit_gold"
                     android:textSize="10sp" />
@@ -308,6 +320,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:fontFamily="@font/inter"
                     android:text="Udang"
                     android:textColor="@color/sabit_gray"
                     android:textSize="10sp" />
@@ -344,6 +357,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
+                        android:fontFamily="@font/inter"
                         android:text="Temukan informasi outlet dan area distribusi Rengginang Sabit."
                         android:textColor="@color/sabit_gray"
                         android:textSize="11sp" />
@@ -352,6 +366,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="14dp"
+                        android:fontFamily="@font/inter"
                         android:text="● PETA DISTRIBUSI"
                         android:textColor="@color/sabit_gold"
                         android:textSize="10sp"
@@ -378,6 +393,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
+                android:fontFamily="@font/inter"
                 android:lineSpacingExtra="3dp"
                 android:text="Rengginang Sabit menghadirkan berbagai pilihan rengginang dengan cita rasa khas. Aplikasi ini membantu pengguna mengenal produk, outlet, dan informasi Rengginang Sabit."
                 android:textColor="@color/sabit_text"
@@ -413,6 +429,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
+                        android:fontFamily="@font/inter"
                         android:text="Jelajahi informasi Rengginang Sabit melalui halaman website."
                         android:textColor="@color/white"
                         android:textSize="11sp" />
@@ -423,6 +440,7 @@
                         android:layout_height="46dp"
                         android:layout_marginTop="16dp"
                         android:backgroundTint="@color/sabit_gold"
+                        android:fontFamily="@font/inter"
                         android:text="Buka Website"
                         android:textColor="@color/sabit_navy"
                         android:textSize="12sp"

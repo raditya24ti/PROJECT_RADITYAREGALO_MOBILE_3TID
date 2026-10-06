@@ -35,6 +35,7 @@ class FifthActivity : AppCompatActivity() {
                 this,
                 WebViewActivity::class.java
             )
+
             startActivity(intent)
         }
     }
@@ -60,6 +61,7 @@ class FifthActivity : AppCompatActivity() {
                     "Search dipilih",
                     Toast.LENGTH_SHORT
                 ).show()
+
                 true
             }
 
@@ -69,6 +71,7 @@ class FifthActivity : AppCompatActivity() {
                     "Settings dipilih",
                     Toast.LENGTH_SHORT
                 ).show()
+
                 true
             }
 

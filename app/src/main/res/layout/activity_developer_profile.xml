@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sabit_cream">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/sabit_navy"
+        android:title="Profil Developer"
+        android:titleTextColor="@color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="28dp">
+
+            <!-- Foto / Logo -->
+            <ImageView
+                android:id="@+id/imgDeveloper"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo"
+                android:scaleType="centerInside"
+                android:contentDescription="Foto Developer" />
+
+            <!-- Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Developer Profile"
+                android:textColor="@color/sabit_navy"
+                android:textSize="28sp"
+                android:fontFamily="@font/archivoblack" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Rengginang Sabit"
+                android:textColor="@color/sabit_gold"
+                android:textSize="15sp"
+                android:fontFamily="@font/archivo" />
+
+            <!-- Nama -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Nama"
+                android:textColor="@color/sabit_gold"
+                android:textSize="13sp"
+                android:fontFamily="@font/archivo" />
+
+            <TextView
+                android:id="@+id/tvNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="RDT"
+                android:textColor="@color/sabit_navy"
+                android:textSize="18sp"
+                android:fontFamily="@font/archivo" />
+
+            <!-- Sosial Media -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Sosial Media"
+                android:textColor="@color/sabit_gold"
+                android:textSize="13sp"
+                android:fontFamily="@font/archivo" />
+
+            <TextView
+                android:id="@+id/tvSosmed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@rdtregalo"
+                android:textColor="@color/sabit_text"
+                android:textSize="15sp"
+                android:fontFamily="@font/inter" />
+
+            <!-- Hobi -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Hobi"
+                android:textColor="@color/sabit_gold"
+                android:textSize="13sp"
+                android:fontFamily="@font/archivo" />
+
+            <TextView
+                android:id="@+id/tvHobi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Bola"
+                android:textColor="@color/sabit_text"
+                android:textSize="15sp"
+                android:fontFamily="@font/inter" />
+
+            <!-- Kekuatan Terbesar -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Kekuatan Terbesar"
+                android:textColor="@color/sabit_gold"
+                android:textSize="13sp"
+                android:fontFamily="@font/archivo" />
+
+            <TextView
+                android:id="@+id/tvKekuatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="28dp"
+                android:text="Ahli pedang"
+                android:textColor="@color/sabit_text"
+                android:textSize="15sp"
+                android:fontFamily="@font/inter" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -33,12 +33,12 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Header -->
+            <!-- ================= HEADER ================= -->
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/archivo"
+                android:fontFamily="@font/archivoblack"
                 android:text="Informasi Rengginang Sabit"
                 android:textColor="@color/sabit_navy"
                 android:textSize="24sp"
@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
+                android:fontFamily="@font/inter"
                 android:text="Kenali lebih dekat produk dan layanan Rengginang Sabit."
                 android:textColor="@color/sabit_gray"
                 android:textSize="12sp" />
@@ -73,6 +74,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/archivo"
                         android:text="Rengginang Sabit"
                         android:textColor="@color/sabit_gold"
                         android:textSize="18sp"
@@ -82,6 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter"
                         android:lineSpacingExtra="2dp"
                         android:text="Produk rengginang dengan cita rasa gurih dan renyah yang cocok untuk dinikmati bersama keluarga."
                         android:textColor="@color/white"
@@ -107,11 +110,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/inter"
                 android:text="Gunakan tombol berikut untuk mencoba fitur aplikasi."
                 android:textColor="@color/sabit_gray"
                 android:textSize="11sp" />
 
-            <!-- Snackbar -->
+            <!-- ================= SNACKBAR ================= -->
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -147,6 +151,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
+                            android:fontFamily="@font/inter"
                             android:text="Tampilkan notifikasi singkat."
                             android:textColor="@color/sabit_gray"
                             android:textSize="10sp" />
@@ -158,6 +163,7 @@
                         android:layout_width="115dp"
                         android:layout_height="40dp"
                         android:backgroundTint="@color/sabit_navy"
+                        android:fontFamily="@font/inter"
                         android:text="Coba"
                         android:textColor="@color/white"
                         android:textSize="10sp"
@@ -167,7 +173,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Alert Dialog -->
+            <!-- ================= ALERT DIALOG ================= -->
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -203,6 +209,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
+                            android:fontFamily="@font/inter"
                             android:text="Tampilkan dialog konfirmasi."
                             android:textColor="@color/sabit_gray"
                             android:textSize="10sp" />
@@ -214,6 +221,7 @@
                         android:layout_width="115dp"
                         android:layout_height="40dp"
                         android:backgroundTint="@color/sabit_gold"
+                        android:fontFamily="@font/inter"
                         android:text="Coba"
                         android:textColor="@color/sabit_navy"
                         android:textSize="10sp"
@@ -280,6 +288,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
+                            android:fontFamily="@font/inter"
                             android:text="250g"
                             android:textColor="@color/sabit_gray"
                             android:textSize="10sp" />
@@ -288,6 +297,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
+                            android:fontFamily="@font/inter"
                             android:text="Rp 25.000"
                             android:textColor="@color/sabit_gold"
                             android:textSize="14sp"

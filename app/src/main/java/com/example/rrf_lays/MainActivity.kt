@@ -17,15 +17,35 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnMasuk.setOnClickListener {
+        // =========================
+        // ADMIN
+        // =========================
+
+        binding.btnAdmin.setOnClickListener {
 
             val intent = Intent(
                 this,
-                ThirdResultActivity::class.java
+                AuthActivity::class.java
             )
 
             startActivity(intent)
         }
+
+        // =========================
+        // LIHAT PRODUK
+        // =========================
+
+        binding.btnMasuk.setOnClickListener {
+
+            binding.scrollViewMain.smoothScrollTo(
+                0,
+                binding.tvProdukUnggulan.top
+            )
+        }
+
+        // =========================
+        // PERTEMUAN 4
+        // =========================
 
         binding.btnToFourth.setOnClickListener {
 
@@ -34,12 +54,27 @@ class MainActivity : AppCompatActivity() {
                 FourthActivity::class.java
             )
 
-            intent.putExtra("name", "Politeknik Caltex Riau")
-            intent.putExtra("from", "Rumbai")
-            intent.putExtra("age", 25)
+            intent.putExtra(
+                "name",
+                "Politeknik Caltex Riau"
+            )
+
+            intent.putExtra(
+                "from",
+                "Rumbai"
+            )
+
+            intent.putExtra(
+                "age",
+                25
+            )
 
             startActivity(intent)
         }
+
+        // =========================
+        // PERTEMUAN 5
+        // =========================
 
         binding.btnToFifth.setOnClickListener {
 
