@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Tombol 1: Home -->
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+
+    <!-- Tombol 2: Katalog -->
+    <item
+        android:id="@+id/katalog"
+        android:icon="@drawable/ic_katalog"
+        android:title="Katalog" />
+
+    <!-- Tombol 3: Outlet -->
+    <item
+        android:id="@+id/outlet"
+        android:icon="@drawable/ic_outlet"
+        android:title="Outlet" />
+
+    <!-- Tombol 4: Informasi -->
+    <item
+        android:id="@+id/informasi"
+        android:icon="@drawable/ic_informasi"
+        android:title="Informasi" />
+
+</menu>

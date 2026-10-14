@@ -83,10 +83,10 @@ class AdminActivity : AppCompatActivity() {
 
                 dialog.dismiss()
 
-                // Logout → kembali ke MainActivity
+                // Logout → kembali ke BaseActivity karena MainActivity sudah dihapus
                 val intent = Intent(
-                    this,
-                    MainActivity::class.java
+                    this@AdminActivity,
+                    BaseActivity::class.java
                 )
 
                 intent.flags =
