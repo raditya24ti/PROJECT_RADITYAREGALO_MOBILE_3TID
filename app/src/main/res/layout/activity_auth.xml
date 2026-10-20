@@ -79,6 +79,7 @@
             android:fontFamily="@font/inter"
             android:background="@android:drawable/editbox_background" />
 
+
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
@@ -90,6 +91,18 @@
             android:textStyle="bold"
             android:fontFamily="@font/inter"
             android:backgroundTint="@color/sabit_navy" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:text="Belum Punya Akun? Registrasi"
+            android:textColor="@color/sabit_navy"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            android:backgroundTint="@color/sabit_gold" />
 
     </LinearLayout>
 

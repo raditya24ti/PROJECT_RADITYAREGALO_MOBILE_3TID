@@ -149,12 +149,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="20dp"
+                        android:backgroundTint="@color/sabit_gold"
+                        android:fontFamily="@font/inter"
                         android:text="Lihat Produk"
                         android:textColor="@color/sabit_navy"
-                        android:textStyle="bold"
                         android:textSize="13sp"
-                        android:fontFamily="@font/inter"
-                        android:backgroundTint="@color/sabit_gold" />
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
