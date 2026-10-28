@@ -85,7 +85,9 @@
                         android:textColor="@color/sabit_gray"
                         android:textSize="13sp" />
 
+                    <!-- TAMBAHAN ID UNTUK TOMBOL PUSAT -->
                     <Button
+                        android:id="@+id/btnRuteOutletPusat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -134,7 +136,9 @@
                         android:textColor="@color/sabit_gray"
                         android:textSize="13sp" />
 
+                    <!-- TAMBAHAN ID UNTUK TOMBOL CABANG -->
                     <Button
+                        android:id="@+id/btnRuteOutletSudirman"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -149,7 +153,6 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Padding ekstra di bawah agar tidak tertutup Bottom Nav -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="80dp" />

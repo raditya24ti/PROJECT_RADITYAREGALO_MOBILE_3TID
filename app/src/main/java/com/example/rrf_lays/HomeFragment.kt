@@ -22,11 +22,33 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    // DISINI KITA MENERAPKAN ILMU DARI MODUL: onViewCreated
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Asumsi ID tombol Admin di layout XML kamu adalah btn_admin
+        // ==========================================
+        // FITUR BARU: IMAGE SLIDER (BANNER PROMO)
+        // ==========================================
+
+        // 1. Siapkan daftar gambar dari drawable (kamu bisa ganti dengan gambar banner asli nanti)
+        val imageList = listOf(
+            R.drawable.original,
+            R.drawable.cumi,
+            R.drawable.bawang
+        )
+
+        // 2. Hubungkan daftar gambar ke BannerAdapter, lalu pasang ke ViewPager2
+        val bannerAdapter = BannerAdapter(imageList)
+        binding.viewPagerBanner.adapter = bannerAdapter
+
+        // 3. Tambahkan efek animasi pergeseran (Page Transformer) agar transisinya mulus
+        binding.viewPagerBanner.setPageTransformer { page, position ->
+            page.translationX = -position * (view.width * 0.1f)
+        }
+
+
+        // ==========================================
+        // FITUR LAMA: NAVIGASI KE HALAMAN ADMIN
+        // ==========================================
         binding.btnAdmin.setOnClickListener {
             // Menerapkan requireContext() sesuai instruksi modul
             val intent = Intent(requireContext(), AuthActivity::class.java)

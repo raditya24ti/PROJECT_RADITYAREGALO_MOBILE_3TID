@@ -101,6 +101,20 @@
                             android:textColor="@color/sabit_gold"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <!-- TOMBOL BELI ORIGINAL -->
+                        <Button
+                            android:id="@+id/btnBeliOriginal"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/sabit_navy"
+                            android:fontFamily="@font/inter"
+                            android:text="Pesan"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -147,6 +161,20 @@
                             android:textColor="@color/sabit_gold"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <!-- TOMBOL BELI RAWIT -->
+                        <Button
+                            android:id="@+id/btnBeliRawit"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/sabit_navy"
+                            android:fontFamily="@font/inter"
+                            android:text="Pesan"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
@@ -201,6 +229,20 @@
                             android:textColor="@color/sabit_gold"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <!-- TOMBOL BELI CUMI -->
+                        <Button
+                            android:id="@+id/btnBeliCumi"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/sabit_navy"
+                            android:fontFamily="@font/inter"
+                            android:text="Pesan"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -247,11 +289,24 @@
                             android:textColor="@color/sabit_gold"
                             android:textSize="14sp"
                             android:textStyle="bold" />
+
+                        <!-- TOMBOL BELI BAWANG -->
+                        <Button
+                            android:id="@+id/btnBeliBawang"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="12dp"
+                            android:backgroundTint="@color/sabit_navy"
+                            android:fontFamily="@font/inter"
+                            android:text="Pesan"
+                            android:textColor="@color/sabit_gold"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
-            <!-- Padding ekstra di bawah agar tidak tertutup Bottom Nav -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="80dp" />
