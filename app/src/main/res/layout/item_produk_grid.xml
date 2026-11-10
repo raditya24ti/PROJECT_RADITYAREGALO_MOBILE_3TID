@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@drawable/bg_grid_item"
+    android:elevation="2dp"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <ImageView
+        android:id="@+id/imgGridProduk"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/original" />
+
+    <TextView
+        android:id="@+id/tvGridNama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/archivo"
+        android:text="Rengginang Original"
+        android:textColor="@color/sabit_navy"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvGridBerat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/inter"
+        android:text="250g"
+        android:textColor="@color/sabit_gray"
+        android:textSize="11sp" />
+
+    <TextView
+        android:id="@+id/tvGridHarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/inter"
+        android:text="Rp25.000"
+        android:textColor="@color/sabit_gold"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnGridPesan"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/sabit_navy"
+        android:fontFamily="@font/inter"
+        android:text="Pesan"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="8dp" />
+</LinearLayout>

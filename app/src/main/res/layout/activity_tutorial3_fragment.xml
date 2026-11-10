@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sabit_cream">
+
+    <ImageView
+        android:id="@+id/imgTutorial3"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:src="@drawable/bawang"
+        app:layout_constraintBottom_toTopOf="@+id/tvJudul3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvJudul3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/archivoblack"
+        android:text="Temukan Outlet Kami"
+        android:textColor="@color/sabit_navy"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDeskripsi3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgTutorial3" />
+
+    <TextView
+        android:id="@+id/tvDeskripsi3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/inter"
+        android:text="Gunakan navigasi terintegrasi Google Maps untuk menemukan cabang Rengginang Sabit terdekat dari lokasimu."
+        android:textAlignment="center"
+        android:textColor="@color/sabit_gray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvJudul3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
