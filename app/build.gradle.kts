@@ -4,14 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.rrf_lays"
-    compileSdk {
-        version = release(37)
-    }
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.rrf_lays"
         minSdk = 24
-        targetSdk = 37
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
