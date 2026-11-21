@@ -39,6 +39,25 @@
             android:textSize="12sp" />
     </LinearLayout>
 
+    <!-- SEARCH BAR OUTLET -->
+    <EditText
+        android:id="@+id/etSearchOutlet"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:drawable/editbox_background"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/inter"
+        android:hint="Cari lokasi outlet / kota..."
+        android:inputType="text"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="14sp" />
+
     <!-- ==================== DAFTAR CABANG ==================== -->
     <ScrollView
         android:layout_width="match_parent"
@@ -51,107 +70,11 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- OUTLET 1: Pusat -->
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOutlet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/archivo"
-                        android:text="Outlet Pusat (Rumbai)"
-                        android:textColor="@color/sabit_navy"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/inter"
-                        android:lineSpacingExtra="2dp"
-                        android:text="Jl. Umban Sari No. 1, Rumbai, Kota Pekanbaru, Riau."
-                        android:textColor="@color/sabit_gray"
-                        android:textSize="13sp" />
-
-                    <!-- TAMBAHAN ID UNTUK TOMBOL PUSAT -->
-                    <Button
-                        android:id="@+id/btnRuteOutletPusat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:backgroundTint="@color/sabit_gold"
-                        android:fontFamily="@font/inter"
-                        android:text="Lihat di Peta"
-                        android:textColor="@color/sabit_navy"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- OUTLET 2: Cabang -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="2dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/archivo"
-                        android:text="Outlet Sudirman"
-                        android:textColor="@color/sabit_navy"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/inter"
-                        android:lineSpacingExtra="2dp"
-                        android:text="Jl. Jend. Sudirman No. 123, Marpoyan Damai, Kota Pekanbaru, Riau."
-                        android:textColor="@color/sabit_gray"
-                        android:textSize="13sp" />
-
-                    <!-- TAMBAHAN ID UNTUK TOMBOL CABANG -->
-                    <Button
-                        android:id="@+id/btnRuteOutletSudirman"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:backgroundTint="@color/sabit_gold"
-                        android:fontFamily="@font/inter"
-                        android:text="Lihat di Peta"
-                        android:textColor="@color/sabit_navy"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="20dp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                android:nestedScrollingEnabled="false" />
 
             <View
                 android:layout_width="match_parent"

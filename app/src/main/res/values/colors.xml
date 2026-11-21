@@ -12,4 +12,25 @@
     <color name="sabit_card">#1E293B</color>
     <color name="bottom_nav_color">#0F172A</color>
 
+    <!-- Admin TailAdmin Colors -->
+    <color name="admin_bg">#F9FAFB</color>
+    <color name="admin_card">#FFFFFF</color>
+    <color name="admin_border">#E4E7EC</color>
+    <color name="admin_row_bg">#99F9FAFB</color>
+    <color name="admin_text">#101828</color>
+    <color name="admin_text_title">#475467</color>
+    <color name="admin_text_body">#344054</color>
+    <color name="admin_muted">#667085</color>
+    <color name="admin_label">#98A2B3</color>
+    <color name="admin_red">#B91C1C</color>
+    <color name="admin_red_bright">#DC2626</color>
+    <color name="admin_red_dark">#991B1B</color>
+    <color name="admin_red_soft">#FEF2F2</color>
+    <color name="admin_red_soft2">#FEE2E2</color>
+    <color name="admin_amber">#F59E0B</color>
+    <color name="admin_amber_dark">#D97706</color>
+    <color name="admin_amber_soft">#FFFBEB</color>
+    <color name="admin_amber_soft2">#FEF3C7</color>
+    <color name="admin_brown">#92400E</color>
+
 </resources>

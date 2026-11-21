@@ -3,13 +3,19 @@ package com.example.rrf_lays
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.rrf_lays.data.api.ApiErrorHelper
+import com.example.rrf_lays.data.api.SupabaseClient
+import com.example.rrf_lays.data.api.UserApiService
 import com.example.rrf_lays.databinding.ActivityAuthBinding
-import kotlin.jvm.java
+import kotlinx.coroutines.launch
 
 class AuthActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthBinding
+    private val userApi by lazy { SupabaseClient.create<UserApiService>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,50 +23,93 @@ class AuthActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Mengambil SharedPreferences
-        val sharedPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
-        // SOAL 1: Navigasi dari Login ke Halaman Registrasi
+        // Navigasi dari Login ke Halaman Registrasi
         binding.btnRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
-        // SOAL 2: Logika Login dengan 2 Aturan (Rule 1 & Rule 2)
+        // Logika Login dengan Rule 1 & Rule 2 (Supabase)
         binding.btnLogin.setOnClickListener {
             val username = binding.inputUsername.text.toString().trim()
             val password = binding.inputPassword.text.toString().trim()
 
-            // Ambil data yang tersimpan dari SharedPreferences
-            val savedUsername = sharedPref.getString("saved_username", null)
-            val savedPassword = sharedPref.getString("saved_password", null)
+            if (username.isEmpty() || password.isEmpty()) {
+                AlertDialog.Builder(this)
+                    .setTitle("Login Gagal")
+                    .setMessage("Username dan Password tidak boleh kosong.")
+                    .setPositiveButton("OK", null)
+                    .show()
+                return@setOnClickListener
+            }
 
-            // Rule 1: username == password
-            val isRule1Valid = username.isNotEmpty() && username == password
+            // Rule 1: username == password (tetap dipertahankan)
+            val isRule1Valid = username == password
 
-            // Rule 2: username == username di SharedPreference DAN password == password di SharedPreference
-            val isRule2Valid = username.isNotEmpty() &&
-                    username == savedUsername &&
-                    password == savedPassword
-
-            // Cek apakah memenuhi Rule 1 ATAU Rule 2
-            if (isRule1Valid || isRule2Valid) {
+            if (isRule1Valid) {
                 // Simpan status login
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
                 editor.putString("username", username)
                 editor.apply()
 
-                // Login berhasil → Pindah ke AdminActivity
                 val intent = Intent(this, AdminActivity::class.java)
                 startActivity(intent)
                 finish()
-            } else {
-                // Jika kedua rule gagal
-                AlertDialog.Builder(this)
-                    .setTitle("Login Gagal")
-                    .setMessage("Username atau Password tidak cocok dengan sistem/SharedPreferences. Silahkan coba lagi.")
-                    .setPositiveButton("OK", null)
-                    .show()
+                return@setOnClickListener
+            }
+
+            // Rule 2: Cek ke Supabase (mobile.users) tanpa fallback SharedPreferences untuk sementara
+            binding.btnLogin.isEnabled = false
+            binding.btnLogin.text = "Memeriksa..."
+
+            lifecycleScope.launch {
+                var loginSuccess = false
+                var fetchedName: String? = null
+                var errorMessage: String? = null
+
+                try {
+                    val response = userApi.login("eq.$username", "eq.$password")
+                    if (response.isSuccessful) {
+                        val users = response.body()
+                        if (!users.isNullOrEmpty()) {
+                            loginSuccess = true
+                            fetchedName = users[0].nama
+                        } else {
+                            errorMessage = "Username atau Password salah atau tidak terdaftar di Supabase."
+                        }
+                    } else {
+                        errorMessage = ApiErrorHelper.parseError(response)
+                    }
+                } catch (e: Exception) {
+                    Log.e("Supabase", "gagal", e)
+                    errorMessage = "Gagal terhubung ke server: ${e.message}"
+                } finally {
+                    binding.btnLogin.isEnabled = true
+                    binding.btnLogin.text = "Login"
+                }
+
+                if (loginSuccess) {
+                    val editor = sharedPref.edit()
+                    editor.putBoolean("isLogin", true)
+                    editor.putString("username", username)
+                    if (fetchedName != null) {
+                        editor.putString("nama", fetchedName)
+                    }
+                    editor.apply()
+
+                    val intent = Intent(this@AuthActivity, AdminActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    AlertDialog.Builder(this@AuthActivity)
+                        .setTitle("Login Gagal")
+                        .setMessage(errorMessage ?: "Username atau Password salah.")
+                        .setPositiveButton("OK", null)
+                        .show()
+                }
             }
         }
     }

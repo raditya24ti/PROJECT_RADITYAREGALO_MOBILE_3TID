@@ -6,4 +6,13 @@
     </style>
 
     <style name="Theme.RRFLAYS" parent="Base.Theme.RRFLAYS" />
+
+    <style name="Theme.RRFLAYS.Admin" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/admin_bg</item>
+        <item name="colorPrimary">@color/admin_amber</item>
+        <item name="colorOnPrimary">@color/admin_text</item>
+        <item name="colorError">@color/admin_red</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

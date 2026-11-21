@@ -7,10 +7,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rrf_lays.data.model.Produk
+import com.example.rrf_lays.util.Format.toRupiah
+import com.example.rrf_lays.util.ImageLoader.loadGambar
 
 class ProdukAdapter(
-    private val listProduk: List<ProdukModel>,
-    private val onClickPesan: (ProdukModel) -> Unit
+    private val listProduk: List<Produk>,
+    private val onClickPesan: (Produk) -> Unit
 ) : RecyclerView.Adapter<ProdukAdapter.ProdukViewHolder>() {
 
     class ProdukViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -30,8 +33,8 @@ class ProdukAdapter(
         val produk = listProduk[position]
         holder.tvNama.text = produk.nama
         holder.tvBerat.text = produk.berat
-        holder.tvHarga.text = produk.harga
-        holder.imgProduk.setImageResource(produk.gambarResId)
+        holder.tvHarga.text = produk.harga.toRupiah()
+        holder.imgProduk.loadGambar(produk.gambar)
 
         holder.btnPesan.setOnClickListener {
             onClickPesan(produk)

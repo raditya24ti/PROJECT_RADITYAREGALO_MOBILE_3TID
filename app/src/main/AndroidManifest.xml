@@ -30,11 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RRFLAYS">
 
-        <!-- MainActivity bukan lagi halaman utama -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".MyProject"
             android:exported="false"
@@ -62,6 +58,17 @@
         <activity
             android:name=".AdminActivity"
             android:exported="false"
+            android:theme="@style/Theme.RRFLAYS.Admin"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".admin.produk.ProdukManagementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RRFLAYS.Admin"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".admin.outlet.OutletManagementActivity"
+            android:exported="false"
+            android:theme="@style/Theme.RRFLAYS.Admin"
             android:windowSoftInputMode="adjustResize" />
 
         <!-- SplashScreenActivity menjadi halaman pertama -->

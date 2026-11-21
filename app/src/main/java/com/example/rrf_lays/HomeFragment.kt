@@ -6,15 +6,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.rrf_lays.data.api.ProdukApiService
+import com.example.rrf_lays.data.api.SupabaseClient
 import com.example.rrf_lays.databinding.FragmentHomeBinding
+import com.example.rrf_lays.tutorial.TutorialMessageActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
-    // Setup View Binding untuk Fragment
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private val produkApi by lazy { SupabaseClient.create<ProdukApiService>() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,74 +34,68 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // ==========================================
-        // FITUR 1: IMAGE SLIDER (BANNER PROMO)
-        // ==========================================
-
-        // 1. Siapkan daftar gambar dari drawable
+        // Banner Slider
         val imageList = listOf(
             R.drawable.original,
             R.drawable.cumi,
             R.drawable.bawang
         )
-
-        // 2. Hubungkan daftar gambar ke BannerAdapter, lalu pasang ke ViewPager2
         val bannerAdapter = BannerAdapter(imageList)
         binding.viewPagerBanner.adapter = bannerAdapter
-
-        // 3. Tambahkan efek animasi pergeseran (Page Transformer)
         binding.viewPagerBanner.setPageTransformer { page, position ->
             page.translationX = -position * (view.width * 0.1f)
         }
 
+        // Fetch Produk from Supabase
+        fetchProdukUnggulan()
 
-        // ==========================================
-        // FITUR 2: RECYCLERVIEW GRID
-        // ==========================================
-
-        val daftarProduk = listOf(
-            ProdukModel("Rengginang Original", "250g", "Rp25.000", R.drawable.original),
-            ProdukModel("Rengginang Rawit", "250g", "Rp27.000", R.drawable.rawit),
-            ProdukModel("Rengginang Cumi", "250g", "Rp28.000", R.drawable.cumi),
-            ProdukModel("Rengginang Bawang", "250g", "Rp26.000", R.drawable.bawang),
-            ProdukModel("Rengginang Udang", "250g", "Rp29.000", R.drawable.udang)
-        )
-
-        val produkAdapter = ProdukAdapter(daftarProduk) {
-            // Aksi saat produk diklik: Buka Shopee
-            val linkShopee = "https://shopee.co.id/Rengginang-Sabit-Pekanbaru-i.974795943.22469073604"
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(linkShopee)))
+        // Navigasi ke Katalog
+        val navigateToKatalog = View.OnClickListener {
+            val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+            bottomNav?.selectedItemId = R.id.katalog
         }
+        binding.btnMasuk.setOnClickListener(navigateToKatalog)
+        binding.tvLihatSemua.setOnClickListener(navigateToKatalog)
 
-        binding.rvProdukUnggulan.apply {
-            // Menerapkan tampilan Grid 2 Kolom
-            layoutManager = GridLayoutManager(requireContext(), 2)
-            adapter = produkAdapter
-        }
-
-
-        // ==========================================
-        // FITUR 3: ONBOARD SCREEN (TOMBOL INFO)
-        // ==========================================
+        // Tutorial
         binding.btnInfo.setOnClickListener {
-            // Memanggil Activity Tutorial yang berada di package tutorial
-            val intent = Intent(requireContext(), com.example.rrf_lays.tutorial.TutorialMessageActivity::class.java)
+            val intent = Intent(requireContext(), TutorialMessageActivity::class.java)
             startActivity(intent)
         }
 
-
-        // ==========================================
-        // FITUR LAMA: NAVIGASI KE HALAMAN ADMIN
-        // ==========================================
+        // Admin
         binding.btnAdmin.setOnClickListener {
-            // Menerapkan requireContext() sesuai instruksi modul
             val intent = Intent(requireContext(), AuthActivity::class.java)
             startActivity(intent)
         }
     }
 
+    private fun fetchProdukUnggulan() {
+        lifecycleScope.launch {
+            try {
+                val response = produkApi.getAll()
+                if (response.isSuccessful) {
+                    val listProduk = response.body() ?: emptyList()
+                    val produkAdapter = ProdukAdapter(listProduk) { produk ->
+                        val defaultShopee = "https://shopee.co.id/Rengginang-Sabit-Pekanbaru-i.974795943.22469073604"
+                        val link = if (!produk.link_shopee.isNullOrBlank()) produk.link_shopee else defaultShopee
+                        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
+                    }
+                    binding.rvProdukUnggulan.apply {
+                        layoutManager = GridLayoutManager(requireContext(), 2)
+                        adapter = produkAdapter
+                    }
+                } else {
+                    Toast.makeText(requireContext(), "Gagal memuat produk", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat produk", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null // Mencegah memory leak
+        _binding = null
     }
 }
