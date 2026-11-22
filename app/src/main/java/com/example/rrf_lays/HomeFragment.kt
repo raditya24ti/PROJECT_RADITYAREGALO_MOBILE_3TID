@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.rrf_lays.data.api.CatFactApiClient
 import com.example.rrf_lays.data.api.ProdukApiService
 import com.example.rrf_lays.data.api.SupabaseClient
 import com.example.rrf_lays.databinding.FragmentHomeBinding
@@ -49,6 +50,14 @@ class HomeFragment : Fragment() {
         // Fetch Produk from Supabase
         fetchProdukUnggulan()
 
+        // Load Cat Fact
+        loadCatFact()
+
+        binding.btnRefresh.setOnClickListener {
+            binding.tvCatFact.text = "Loading cat fact..."
+            loadCatFact()
+        }
+
         // Navigasi ke Katalog
         val navigateToKatalog = View.OnClickListener {
             val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottom_nav_view)
@@ -70,6 +79,21 @@ class HomeFragment : Fragment() {
         }
     }
 
+    private fun loadCatFact() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                if (_binding != null) {
+                    binding.tvCatFact.text = "\"${response.fact}\""
+                }
+            } catch (_: Exception) {
+                if (_binding != null) {
+                    binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+                }
+            }
+        }
+    }
+
     private fun fetchProdukUnggulan() {
         lifecycleScope.launch {
             try {
@@ -88,7 +112,7 @@ class HomeFragment : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "Gagal memuat produk", Toast.LENGTH_SHORT).show()
                 }
-            } catch (e: Exception) {
+            } catch (_: Exception) {
                 Toast.makeText(requireContext(), "Gagal memuat produk", Toast.LENGTH_SHORT).show()
             }
         }

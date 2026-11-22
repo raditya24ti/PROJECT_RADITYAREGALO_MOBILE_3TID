@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_menu" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboard"
+            android:icon="@drawable/ic_home"
+            android:title="Beranda (Dashboard)" />
+        <item
+            android:id="@+id/nav_katalog"
+            android:icon="@drawable/ic_box"
+            android:title="Manajemen Katalog" />
+        <item
+            android:id="@+id/nav_outlet"
+            android:icon="@drawable/ic_store"
+            android:title="Manajemen Outlet" />
+    </group>
+
+    <item android:title="OTHERS">
+        <menu>
+            <item
+                android:id="@+id/nav_lihat_aplikasi"
+                android:icon="@drawable/ic_arrow_back"
+                android:title="Lihat Aplikasi" />
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_people"
+                android:title="Profil Developer" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_delete"
+                android:title="Logout" />
+        </menu>
+    </item>
+</menu>

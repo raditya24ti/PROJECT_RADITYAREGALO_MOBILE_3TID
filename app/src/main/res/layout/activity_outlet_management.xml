@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.outlet.OutletManagementActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/admin_bg">
+
+        <include layout="@layout/admin_top_bar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/AdminBreadcrumb"
+                        android:text="Home  ›  Manajemen Outlet (CRUD)" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        style="@style/AdminPageTitle"
+                        android:text="Manajemen Outlet (CRUD)" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/admin_border" />
+
+                    <!-- KARTU FORM "Tambah Outlet" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_admin_card"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/tvFormTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminCardTitle"
+                            android:text="Tambah Outlet" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            style="@style/AdminCardSubtitle"
+                            android:text="Owner bisa menambahkan outlet distribusi baru." />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@color/admin_border" />
+
+                        <!-- NAMA OUTLET -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="NAMA OUTLET" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilNamaOutlet"
+                            style="@style/AdminInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputNamaOutlet"
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:fontFamily="@font/outfit"
+                                android:hint="Contoh: Outlet Rengginang Sabit - Cabang Utara"
+                                android:inputType="textCapWords"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- ALAMAT OUTLET -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="ALAMAT OUTLET" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilAlamat"
+                            style="@style/AdminInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputAlamat"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/outfit"
+                                android:gravity="top"
+                                android:hint="Contoh: Jl. Contoh No. 10"
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:lines="3"
+                                android:minLines="3"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- BARIS DUA KOLOM: LATITUDE & LONGITUDE -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:baselineAligned="false">
+
+                            <!-- LATITUDE -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="LATITUDE" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilLatitude"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputLatitude"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="0.5000"
+                                        android:inputType="numberDecimal|numberSigned"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- LONGITUDE -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="LONGITUDE" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilLongitude"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputLongitude"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="101.4000"
+                                        android:inputType="numberDecimal|numberSigned"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- BANTUAN & TOMBOL PASTE KOORDINAT -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/outfit"
+                                android:text="Google Maps → tekan lama lokasi → salin angka koordinat (lat, lng)"
+                                android:textColor="@color/admin_muted"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/btnPasteKoordinat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="?attr/selectableItemBackground"
+                                android:fontFamily="@font/outfit"
+                                android:padding="4dp"
+                                android:text="Tempel koordinat"
+                                android:textColor="@color/admin_amber_dark"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <!-- BARIS DUA KOLOM: JAM BUKA & NO TELEPON -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:baselineAligned="false">
+
+                            <!-- JAM BUKA -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="JAM BUKA" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilJamBuka"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_marginBottom="16dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputJamBuka"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="08.00 - 21.00"
+                                        android:inputType="text"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- NO TELEPON -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="NO. TELEPON" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilNoTelp"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_marginBottom="16dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputNoTelp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="08..."
+                                        android:inputType="phone"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- SAVE BUTTON -->
+                        <Button
+                            android:id="@+id/btnSimpanOutlet"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/bg_btn_amber"
+                            android:fontFamily="@font/outfit"
+                            android:text="+  Simpan Outlet"
+                            android:textColor="@color/admin_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <!-- BATAL EDIT BUTTON -->
+                        <TextView
+                            android:id="@+id/btnBatalEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/outfit"
+                            android:padding="8dp"
+                            android:text="Batal Edit"
+                            android:textColor="@color/admin_muted"
+                            android:textSize="13sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <!-- KARTU DAFTAR "Daftar Outlet" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/bg_admin_card"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminCardTitle"
+                            android:text="Daftar Outlet" />
+
+                        <TextView
+                            android:id="@+id/tvTotalOutletCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/outfit"
+                            android:text="Total outlet aktif saat ini: 0"
+                            android:textColor="@color/admin_text"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="@color/admin_border" />
+
+                        <!-- RecyclerView List -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvOutlet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+
+                        <!-- Empty State -->
+                        <TextView
+                            android:id="@+id/tvEmptyState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="24dp"
+                            android:fontFamily="@font/outfit"
+                            android:text="Belum ada data outlet terdaftar."
+                            android:textColor="@color/admin_muted"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/admin_card"
+        app:headerLayout="@layout/admin_drawer_header"
+        app:menu="@menu/admin_drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".admin.produk.ProdukManagementActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/admin_bg">
+
+        <include layout="@layout/admin_top_bar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/AdminBreadcrumb"
+                        android:text="Home  ›  Manajemen Katalog" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        style="@style/AdminPageTitle"
+                        android:text="Manajemen Katalog" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@color/admin_border" />
+
+                    <!-- 1. KARTU FORM "Entri Produk Baru" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_admin_card"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:id="@+id/tvFormTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminCardTitle"
+                            android:text="Entri Produk Baru" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            style="@style/AdminCardSubtitle"
+                            android:text="Tambahkan katalog produk retail Sabit." />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@color/admin_border" />
+
+                        <!-- NAMA PRODUK -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="NAMA PRODUK" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilNama"
+                            style="@style/AdminInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputNama"
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:fontFamily="@font/outfit"
+                                android:hint="Contoh: Rengginang Original"
+                                android:inputType="textCapWords"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- DESKRIPSI SINGKAT -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="DESKRIPSI SINGKAT" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilDeskripsi"
+                            style="@style/AdminInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputDeskripsi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/outfit"
+                                android:gravity="top"
+                                android:hint="Tulis deskripsi singkat produk..."
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:lines="3"
+                                android:minLines="3"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- BARIS DUA KOLOM: HARGA & BERAT -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:baselineAligned="false">
+
+                            <!-- HARGA -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="HARGA (IDR)" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilHarga"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_marginBottom="16dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputHarga"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="Contoh: 25000"
+                                        android:inputType="number"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+
+                            <!-- BERAT -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginStart="6dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@style/AdminLabel"
+                                    android:text="BERAT" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/tilBerat"
+                                    style="@style/AdminInput"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:layout_marginBottom="16dp"
+                                    app:errorEnabled="true">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/inputBerat"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="52dp"
+                                        android:fontFamily="@font/outfit"
+                                        android:hint="250g"
+                                        android:inputType="text"
+                                        android:textSize="15sp" />
+                                </com.google.android.material.textfield.TextInputLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- GAMBAR & PREVIEW -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="GAMBAR (NAMA DRAWABLE / URL)" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilGambar"
+                                style="@style/AdminInput"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="12dp"
+                                app:errorEnabled="true">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/inputGambar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="52dp"
+                                    android:fontFamily="@font/outfit"
+                                    android:hint="original atau https://..."
+                                    android:inputType="textUri"
+                                    android:textSize="15sp" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <ImageView
+                                android:id="@+id/imgPreview"
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:background="@drawable/bg_admin_card"
+                                android:scaleType="centerCrop"
+                                android:contentDescription="Preview"
+                                android:src="@drawable/logo" />
+                        </LinearLayout>
+
+                        <!-- LINK SHOPEE -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminLabel"
+                            android:text="LINK SHOPEE" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilLinkShopee"
+                            style="@style/AdminInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="20dp"
+                            app:errorEnabled="true">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/inputLinkShopee"
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:fontFamily="@font/outfit"
+                                android:hint="https://shopee.co.id/..."
+                                android:inputType="textUri"
+                                android:textSize="15sp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- PUBLISH BUTTON -->
+                        <Button
+                            android:id="@+id/btnPublish"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/bg_btn_amber"
+                            android:fontFamily="@font/outfit"
+                            android:text="Publish Produk Baru"
+                            android:textColor="@color/admin_text"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <!-- BATAL EDIT BUTTON -->
+                        <TextView
+                            android:id="@+id/btnBatalEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/outfit"
+                            android:padding="8dp"
+                            android:text="Batal Edit"
+                            android:textColor="@color/admin_muted"
+                            android:textSize="13sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <!-- 2. KARTU DAFTAR "Daftar Katalog Aktif" -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/bg_admin_card"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/AdminCardTitle"
+                            android:text="Daftar Katalog Aktif" />
+
+                        <TextView
+                            android:id="@+id/tvTotalProdukCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/outfit"
+                            android:text="Total produk: 0"
+                            android:textColor="@color/admin_text"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="14dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="@color/admin_border" />
+
+                        <!-- Table Header -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/AdminLabel"
+                                android:text="PRODUK" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/AdminLabel"
+                                android:text="HARGA" />
+
+                            <TextView
+                                android:layout_width="60dp"
+                                android:layout_height="wrap_content"
+                                style="@style/AdminLabel"
+                                android:gravity="end"
+                                android:text="AKSI" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@color/admin_border" />
+
+                        <!-- RecyclerView List -->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvProduk"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+
+                        <!-- Empty State -->
+                        <TextView
+                            android:id="@+id/tvEmptyState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="24dp"
+                            android:fontFamily="@font/outfit"
+                            android:text="Belum ada produk terdaftar di database."
+                            android:textColor="@color/admin_muted"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/admin_card"
+        app:headerLayout="@layout/admin_drawer_header"
+        app:menu="@menu/admin_drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
